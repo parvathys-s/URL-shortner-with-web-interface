@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  tinyfox:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - BASE_URL=http://127.0.0.1:8000
+      - DATABASE_URL=sqlite:///./data.db
+    volumes:
+      - ./data.db:/app/data.db
